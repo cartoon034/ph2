@@ -92,14 +92,12 @@ if __name__ == '__main__':
 
         time.sleep(2)
 
-        profileadmin = browser.find_element(By.XPATH,
-                                            '/html/body/div[1]/div/div/div/header/div/div[2]/div[6]/button/i')
+        profileadmin = browser.find_element(By.XPATH,'/html/body/div[1]/div/div/div/header/div/div[2]/div[6]/button/i')
         browser.execute_script("arguments[0].click();", profileadmin)
 
         time.sleep(2)
 
-        logoutadmin = browser.find_element(By.XPATH,
-                                           '/html/body/div[1]/div/div/div/header/div/div[2]/div[6]/ul/a[2]')
+        logoutadmin = browser.find_element(By.XPATH,'/html/body/div[1]/div/div/div/header/div/div[2]/div[6]/ul/a[2]')
         browser.execute_script("arguments[0].click();", logoutadmin)
 
         try:
@@ -923,19 +921,17 @@ if __name__ == '__main__':
 
         try:
 
-            time.sleep(2)
+            time.sleep(5)
 
-            ok = browser.find_element(By.XPATH, '/html/body/div[3]/div/div[3]/button[1]')
+            ok = browser.find_element(By.XPATH, '/html/body/div[3]/div/div[6]/button[1]')
             browser.execute_script("arguments[0].click();", ok)
 
             time.sleep(2)
 
-            print('[{}] Deposit reject successful !'.format(
-                datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+            print('[{}] Deposit reject successful !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
         except:
-            print('[{}] Deposit reject false !'.format(
-                datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+            print('[{}] Deposit reject false !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
     # สร้างรายการถอน
     def admin_Create_Withdrawal():
@@ -1449,6 +1445,8 @@ if __name__ == '__main__':
         reduce_credit()
 
         Delete_user()
+
+        logout_admin()
 
         # login_user_2()
 
